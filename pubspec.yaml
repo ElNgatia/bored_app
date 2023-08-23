@@ -1,4 +1,4 @@
-name: bored_app
+name: adventure_quest
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.0.5
   http: ^1.1.0
+  fluttertoast: ^8.2.2
 
 dev_dependencies:
   flutter_test:

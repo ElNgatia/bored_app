@@ -1,7 +1,9 @@
-import 'package:bored_app/presentation/common_scaffold.dart';
-import 'package:bored_app/utils/activities_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../utils/color_schemes.g.dart';
+import 'presentation/common_scaffold.dart';
+import 'utils/activities_model.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,11 +25,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bored App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      title: 'Adventure Quest',
+      theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
+      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
       home: const CommonScaffold(),
     );
   }

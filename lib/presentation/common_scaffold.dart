@@ -1,5 +1,6 @@
-import 'package:bored_app/presentation/favorites.dart';
-import 'package:bored_app/presentation/home.dart';
+import 'package:adventure_quest/presentation/favorites.dart';
+import 'package:adventure_quest/presentation/home.dart';
+
 import 'package:flutter/material.dart';
 
 class CommonScaffold extends StatefulWidget {
@@ -27,15 +28,14 @@ class _CommonScaffoldState extends State<CommonScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Bored App'),
-          centerTitle: true,
-          backgroundColor: Colors.deepPurple
+        title: const Text('Adventure Quest'),
+        centerTitle: true,
       ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedFontSize: 14,
         unselectedFontSize: 14,
-        selectedItemColor: Colors.black,
+        // selectedItemColor: Colors.black,
         elevation: 40,
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
@@ -44,12 +44,12 @@ class _CommonScaffoldState extends State<CommonScaffold> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Colors.black,
+            // backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Favorites',
-            backgroundColor: Colors.black,
+            // backgroundColor: Colors.black,
           ),
         ],
       ),

@@ -1,6 +1,8 @@
-import 'package:bored_app/utils/activities_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../utils/activities_model.dart';
 
 class Favorites extends StatefulWidget {
   const Favorites({super.key});
@@ -23,7 +25,7 @@ class _FavoritesState extends State<Favorites> {
             return Container(
               padding: const EdgeInsets.all(8),
               child: ListTile(
-                tileColor: Colors.grey[300],
+                // tileColor: ,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -34,11 +36,22 @@ class _FavoritesState extends State<Favorites> {
                   activity['type'] ?? '',
                   style: const TextStyle(fontWeight: FontWeight.w500),
                 ),
-                trailing: IconButton(
-                  icon: const Icon(Icons.delete),
-                  onPressed: () {
-                    activitiesModel.removeActivity(activity['key']);
-                  },
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // IconButton(
+                    //   onPressed: () {
+                    //
+                    //   },
+                    //   icon: Icon(Icons.done),
+                    // ),
+                    IconButton(
+                      icon: const Icon(Icons.cancel_outlined),
+                      onPressed: () {
+                        activitiesModel.removeActivity(activity['key']);
+                      },
+                    ),
+                  ],
                 ),
               ),
             );
