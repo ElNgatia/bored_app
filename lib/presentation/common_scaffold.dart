@@ -30,6 +30,7 @@ class _CommonScaffoldState extends State<CommonScaffold> {
       appBar: AppBar(
         title: const Text('Adventure Quest'),
         centerTitle: true,
+        elevation: 10,
       ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(

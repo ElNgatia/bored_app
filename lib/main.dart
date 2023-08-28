@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../utils/color_schemes.g.dart';
@@ -25,9 +24,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Adventure Quest',
-      theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
-      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
+      theme: ThemeData(
+        useMaterial3: true,
+         colorScheme: lightColorScheme),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+       colorScheme: darkColorScheme),
       home: const CommonScaffold(),
     );
   }

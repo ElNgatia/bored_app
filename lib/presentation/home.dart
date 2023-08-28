@@ -1,7 +1,9 @@
+import 'dart:convert';
+
 import 'package:adventure_quest/utils/activities_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Home extends StatefulWidget {
@@ -109,8 +111,19 @@ class _HomeState extends State<Home> {
                     ElevatedButton(
                         onPressed: () {
                           if (fetchedActivity != null) {
+                            // add to favorites
                             activitiesModel
                                 .addActivity(Map.from(fetchedActivity!));
+
+                            // save to local storage
+                            SharedPreferences.getInstance()
+                                .then((SharedPreferences prefs) {
+                              final favorites =
+                                  prefs.getStringList('favorites') ?? [];
+                              favorites.add(json.encode(fetchedActivity));
+                              prefs.setStringList('favorites', favorites);
+                            });
+
                             Fluttertoast.showToast(
                               msg: 'Added to favorites',
                               toastLength: Toast
